@@ -4,7 +4,12 @@
   
   ## Description 
   
-  This is an app that uses a certain schema to build a table that shows who is employed at a complany and what role they fill.
+  This is an app that uses a certain schema to build a table that shows who is employed at a complany and what role they fill. A specific schema had to be used as well:
+  <img width="960" alt="12-sql-homework-demo-02" src="https://user-images.githubusercontent.com/8413917/118420468-ee9ee700-b68c-11eb-960c-38357d202f5e.png">
+  
+  Here is a video demo of th application: 
+  https://drive.google.com/file/d/16Sf776uzZ974B19r2DPCJchrSnO98Icy/view
+ 
   ## Table of Contents
   * [Installation](#installation)
   * [License](#license)
