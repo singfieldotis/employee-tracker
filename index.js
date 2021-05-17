@@ -116,7 +116,7 @@ function viewByDepartment() {
   connection.query(query, (err, res) => {
     if (err) throw err;
     console.log("\n");
-    console.log("VIEW EMPLOYEE BY DEPARTMENT");
+    console.log("VIEW EMPLOYEES BY DEPARTMENT");
     console.log("\n");
     console.table(res);
     prompt();
@@ -133,7 +133,7 @@ function viewByManager() {
   connection.query(query, (err, res) => {
     if (err) throw err;
     console.log("\n");
-    console.log("VIEW EMPLOYEE BY MANAGER");
+    console.log("VIEW EMPLOYEES BY MANAGER");
     console.log("\n");
     console.table(res);
     prompt();
@@ -149,7 +149,7 @@ function viewAllRoles() {
   connection.query(query, (err, res) => {
     if (err) throw err;
     console.log("\n");
-    console.log("VIEW EMPLOYEE BY ROLE");
+    console.log("VIEW EMPLOYEED BY ROLE");
     console.log("\n");
     console.table(res);
     prompt();
@@ -167,7 +167,7 @@ async function addEmployee() {
           name: "role",
           type: "list",
           choices: () => res.map((res) => res.title),
-          message: "What is the employee role?: ",
+          message: "What is the employee's role?: ",
         },
       ]);
       let roleId;
@@ -186,7 +186,7 @@ async function addEmployee() {
             name: "manager",
             type: "list",
             choices: choices,
-            message: "Choose the employee Manager: ",
+            message: "Choose the employee's Manager: ",
           },
         ]);
         let managerId;
@@ -206,7 +206,7 @@ async function addEmployee() {
           }
         }
         console.log(
-          "Employee has been added. Please view all employee to verify..."
+          "Employee has been added. Please view all employees to verify..."
         );
         connection.query(
           "INSERT INTO employee SET ?",
@@ -236,7 +236,7 @@ function remove(input) {
         name: "action",
         type: "list",
         message:
-          "In order to proceed an employee, an ID must be entered. View all employees to get" +
+          "In order to proceed with removing an employee, an ID must be entered. View all employees to get" +
           " the employee ID. Do you know the employee ID?",
         choices: [promptQ.yes, promptQ.no],
       },
@@ -292,7 +292,7 @@ async function updateRole() {
           name: "role",
           type: "list",
           choices: () => res.map((res) => res.title),
-          message: "What is the new employee role?: ",
+          message: "What is the new employee's role?: ",
         },
       ]);
       let roleId;
