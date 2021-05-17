@@ -1,7 +1,5 @@
 DROP DATABASE IF EXISTS employees;
-
 CREATE DATABASE employees;
-
 USE employees;
 
 CREATE TABLE department (
@@ -19,13 +17,13 @@ CREATE TABLE role (
 );
 
 CREATE TABLE employee (
-  id INTEGER UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   first_name VARCHAR(30) NOT NULL,
-  last_name VARCHAR(30) NOT NOT NULL,
-  role_id INTEGER UNSIGNED NOT NULL,
+  last_name VARCHAR(30) NOT NULL,
+  role_id INT UNSIGNED NOT NULL,
   INDEX role_ind (role_id),
   CONSTRAINT fk_role FOREIGN KEY (role_id) REFERENCES role(id) ON DELETE CASCADE,
-  manager_id INTEGER UNSIGNED,
+  manager_id INT UNSIGNED,
   INDEX man_ind (manager_id),
   CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id) ON DELETE SET NULL
 );
@@ -47,16 +45,16 @@ VALUES
     ('Team Analyst', 145000, 2),
     ('Media Relations', 145000, 3),
     ('Marketing Specialist', 150000, 3),
-    ('Legal', 180000, 4),
-    ('CTO', 450000, 4);
+    ('CTO', 450000, 4),
+    ('Marketing Director', 180000, 4);
 INSERT INTO employee
     (first_name, last_name, role_id, manager_id)
 VALUES
-    ('Tom', 'Brady', 1, 2),
-    ('Mike', 'Evans', 2, NULL),
-    ('Bruce', 'Arians', 3, 1),
-    ('Chris', 'Godwin', 4, NULL),
-    ('LaVonte', 'David', 5, 3),
-    ('Ndamukong', 'Suh', 6, NULL),
-    ('Otis', 'Singfield', 7, 4),
-    ('Chelsea', 'Hamashin', 8, NULL);
+    ('Tom', 'Brady', 1, NULL),
+    ('Mike', 'Evans', 2, 1),
+    ('Bruce', 'Arians', 3, NULL),
+    ('Chris', 'Godwin', 4, 3),
+    ('LaVonte', 'David', 5, NULL),
+    ('Ndamukong', 'Suh', 6, 5),
+    ('Otis', 'Singfield', 7, NULL),
+    ('Chelsea', 'Hamashin', 8, 7);
